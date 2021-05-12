@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+    <body>
+        <header class="hero hero-without-bg">
+            <div class="container spacing payment">
+                <div class="hero-top">
+                    <img src="img/Logo.png" alt="">
+                    <!----
+                    <div class="hero-top-left">
+                        <span><a href="#">
+                            Entre em contacto</a> se tiver alguma dúvida
+                        </span>
+                        <span class="t">tel:  <span>995190433 </span>         Email: <span>joaomateus2025@gmail.com</span></span>
+                    </div>
+                -->
+                </div>
+                <h1 class="primary-title payment">Finalizar Compra</h1>
+            
+            </div>
+        </header>
+
+        <main>
+            <section class="payment-container">
+                <div class="payment-content">
+                    <div class="payment-container__step-1">
+                        <div class="step-title">
+                            <h2>1. Informações do cliente</h2>
+                        </div>
+                        <form action="/encomendas" method="post" id="create-encomenda">
+                            <div class="form-group">
+                                <div class="input-box">
+                                    <label for="nome">Nome *</label>
+                                    <input type="text" name="nome" required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="nome">Email</label>
+                                    <input type="text" name="email" required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="nome">Telefone *</label>
+                                    <input type="text" name="telefone" required>
+                                </div>
+                                
+                                <div class="line"></div>
+                            </div>
+                            <input type="hidden" name="preco" value="<%= preco %>">
+                            <input type="hidden" name="nome_produto" value="<%= nome_produto %>">
+
+
+
+
+                            <div class="product-info">
+                                <span class="product-name">
+                                    Gim Gordon
+                                </span>
+                                <span class="product-price">
+                                    <%= preco %>,00 KZ
+                                </span>
+                            </div>
+                            
+                            <div class="product-info">
+                                <span class="total-text">
+                                    Total   
+                                </span>
+                                <span class="total-payment">
+                                    <!-- 15.000,00 kz -->
+                                    <%= preco %>,00 KZ
+                                </span>
+                            </div>
+                            <button class="btn btn-payment" type="submit" form="create-encomenda">Finalzar Compra</button>
+                        </div>
+
+
+                        </form>
+                    </div>
+                <!--
+                    <div class="payment-container__step-2">
+                        <div class="step-title">
+                            <h2>2. Método de Pagamento</h2>
+                        </div>
+                        <div class="form-group">
+                            <div class="payment-method">
+                                <div class="radio-box">
+                                    <label class="container-radio">
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="text">TPA</span>
+                                </div>
+                                <span class="info tpa-info">
+                                    <i class='bx bx-help-circle'></i>
+                                </span>
+                            </div>
+                            <div class="payment-method">
+                                <div class="radio-box">
+                                    <label class="container-radio">
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="text">Transferência Bancária</span>
+                                </div>
+                                <span class="info transfer-info">
+                                    <i class='bx bx-help-circle'></i>
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                -->
+            
+             
+            
+                    </div>
+                
+                </div>
+            </section>
+        </main>
+
+        <%- include("./partials/footer.ejs")%>
+
+    </body>
+</html>
